@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TechHelp</title>
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0"></meta>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    </head>
+    <body>
+    
+    
+    <!--Top header -->  
+    
+    
+    <section class="header">
+        <img id="logo" src="https://api.freelogodesign.org/files/cf5aa066741242e295124f5fdc131ec1/thumb/logo_200x200.png?v=0">
+        <a href="#" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i></a>
+          <div class="nav-bar">
+           <a href="#" >cpp</a><br />
+           <a href="#" >About</a><br/>
+           <a href="#" >contact</a>
+          </div>
+    </section>
+    
+    
+        <!--array class--> 
+         
+        <div>
+        <kbd>CPP</kbd>
+        <br />
+        <br />
+        <header>STL-array class</header>
+        <p>array class used for creating static arrays(array of fixed size)</p>
+        <section class="content">
+            
+           <pre > <code class="cpp">
+#include < iostream>
+#include< array>
+using namespace std;
+
+int main() {
+
+array < int,3> a={1,2,3};
+cout<< a.at(0)<< "\n";//return given 
+index element 
+cout<< a.size()<< "\n";//size of array 
+
+for (int i=0;i<3;i++)
+      cout<< a[i]<<",";
+      
+cout<< "\n"<< a.front()<<endl; //return first element
+cout<< a.back()<< endl ; //return last element
+a.fill(10);//use to fill all index with given number 
+for (int i=0;i<3;i++)
+    cout<< a[i]<<",";
+// array1.swap(array2); used for swaping index wise
+// [] operator used for specific index element accessing 
+// begin(),end() iterators
+
+
+cout<<endl;
+
+
+
+    return 0;
+}
+            </code>
+            </pre>
+        </section>
+        </div>
+        
+        <!--pair class-->
+        
+          
+        <div>
+        <header>STL-pair class</header>
+        <p>
+STL pair template  class for which No header use. 
+pair class creates pairs (group of two data )</p>
+        <section class="content">
+            <pre>
+                <code>
+#include< iostream>  
+using namespace std;
+
+int main() {
+pair < string,int> p;
+p=make_pair("india",1);
+cout<< p.first<< ",";
+cout<< p.second<< endl;
+return 0; 
+
+}
+
+                </code>
+            </pre>
+        </section>
+        </div>
+        
+        <!--tuple class-->  
+        
+        <div>
+        <header>STL-tuple class</header>
+        <p> STL tuple template class<br/>
+tuple is extended pairs (group any number of data )</p>
+        <section class="content">
+            
+        <pre>
+            <code>
+#include< iostream> 
+#include< tuple>. 
+using namespace std;
+
+int main() {
+
+tuple < string,int,int> t;
+t=make_tuple("USA",12,30);
+cout<< get< 0>(t)<< "\n";//get
+ function used for
+ accessing tuple element 
+cout<< get< 1>(t)<< "\n";
+cout<< get< 2>(t)<< "\n"; 
+return 0; 
+}
+            </code>
+        </pre>
+            
+        </section>
+        </div>
+        
+        
+        <!--map class-->  
+        
+        
+        <div>
+            <header>STL-map class</header>
+            <p>
+               <ol>
+                  <li>STL map template class used to implement associative arrays (arrays with any data type indexes )</li><br/>
+ or 
+<li>map contains sorted key-value pairs in which key is unique and  can not be changed but values can be altered.</li> 
+<li>numeric arrays - general arrays(indexes are numeric means starts from 0 to size-1)</li>
+    
+              </ol>
+           </p>
+           <section class="content">
+            <pre>
+                <code>
+#include < iostream>
+#include< map>
+using namespace std;
+
+int main() {
+
+map< string,int>m={{"india",1},{"USA",2}};
+//create associative array 
+name m with 2 key-value pairs 
+cout<< m["USA"]<< endl;//[] 
+access value of specific key
+m["Germany"]=3;//add new key-value pair
+m["Japan"]=4;//add new key-value pair
+m.insert(pair< string,int>{"Canada",5});
+//insert function add new key-value
+pair to associative array
+map< string,int>::iterator p=m.begin();
+//me.begin() function return 
+address of first element of m
+
+while(p!=m.end())
+{
+ cout<< p->first<< ":";//return key
+ cout<< p->second<< endl;//return value 
+ p++;
+    
+}
+cout<< m.size();//return Total 
+number of elements in m 
+cout<< endl;
+cout<< m.at("india")<< endl;//return
+value of given key 
+cout<< m.empty();//return 
+1 if m is empty otherwise
+return 0 if m is not empty 
+m.clear();//removes 
+all element of m 
+cout<< endl;
+cout<< m["india"];//return 0 
+if given key not exist
+in map with no error 
+ 
+    return 0;
+}
+                </code>
+            </pre>
+            </section>
+        </div>
+        
+        <!--list class-->  
+        
+        
+        <div>
+            <header>STL-list class</header>
+            <p>STL list template class used for creating lists where insertion or deletion can take place from both ends (front,end) but elements are accessed sequentially only</p>
+            <section class="content">
+            <pre>
+                <code>
+#include < iostream>
+#include < list>
+using namespace std;
+
+int main() {
+ 
+list < int> l={1,6,3};
+    
+l.push_back(10);// add element at last 
+l.push_front(5);//add element at front 
+l.pop_back();//remove last element
+l.pop_front();//remove first element 
+l.sort();//sorts Elements 
+cout<< l.size()<< endl;//return 
+size of list
+l.reverse();//reverse list elements 
+l.remove(3);//remove specific
+ element from list 
+// l.clear(); removesall element
+of list 
+    
+list< int>::iterator p=l.begin();
+while(p!=l.end())
+{
+   cout<< *p<< ",";
+   p++;
+ }
+    
+    
+  return 0;
+}
+                </code>
+            </pre>
+            </section>
+        </div>
+        
+        
+        <!--Vector class-->  
+                 
+        <div>
+            <header>STL-vector class </header>
+            <p>
+                
+            <ol>
+                <li>vector template class implements dynamic array </li>
+                <li>when there is no sufficient capacity and user store another element then capacity becomes 2 times its previous capacity </li>
+            </ol>
+             </p>
+            <section class="content">
+            <pre>
+                <code>
+#include < iostream>
+#include < vector>
+using namespace std;
+
+int main() {
+vector < int> v1={1,2,3};
+
+cout<< v1.capacity()<< endl;
+//return current capacity 
+
+cout<< v1.size()<< endl;//return 
+current number of elements
+
+cout<< v1.at(1)<< endl;//return 
+ith element 
+cout<< v1[0]<< endl;//[] subscript
+operator ,return ith element 
+cout<< v1.front()<< endl;//return 
+first element 
+cout<< v1.back()<< endl;//return
+last element 
+v1.push_back(10);//Add element
+at last by increasing capacity 
+v1.pop_back();//remove 
+element from back ,
+capacity remains unchanged
+
+// iterators are pointer 
+used to point array elements
+
+vector< int> :: iterator it=v1.begin(); 
+//begin() return begining 
+element address
+v1.insert(it+2,12);//create 
+and insert element
+at (it+2-1)th position.
+v1.clear();//removes 
+all elements of array 
+cout<< v1.size();
+
+
+
+    return 0;
+}
+                </code>
+            </pre>
+            </section>
+        </div>
+        
+        <!--footer section-->
+        
+        <footer>
+            <span class="row"><hr/></span>
+            <i>Designed by -DEEPESH PATEL</i>
+        </footer>
+    </body>
+</html>
