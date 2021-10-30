@@ -1,4 +1,4 @@
-function myFunction()
-{
-$(".nav-bar").css("visibility","visible").toggle();
+
+function myFunction(){
+$(".nav-bar").slideToggle(500);
 }
